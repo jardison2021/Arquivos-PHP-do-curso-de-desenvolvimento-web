@@ -6,6 +6,11 @@
 	<title>Echo e Print</title>
 </head>
 <body>
-
+	<?php
+		//echo é um construtor da linguagem
+		echo 'Comando echo<br>';
+		//print é uma função
+		print 'Comando print';
+	?>
 </body>
 </html>
