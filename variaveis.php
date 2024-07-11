@@ -13,6 +13,8 @@
 		$peso = 79.00;
 		//Variável do tipo boolean
 		$fumante = true;
+		// lógica: alterando valores da variável
+		$idade = '30';
 	?>
 	<h1>Ficha cadastral</h1>
 	<hr>
