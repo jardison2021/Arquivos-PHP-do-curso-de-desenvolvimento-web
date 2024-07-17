@@ -19,7 +19,7 @@
 				echo 'Entrou no case 3';
 				break;			
 			default:
-				echo 'Entrou no default'
+				echo 'Entrou no default'//Caso nenhuma das condições seja atendida!
 				break;
 		}
 	?>
