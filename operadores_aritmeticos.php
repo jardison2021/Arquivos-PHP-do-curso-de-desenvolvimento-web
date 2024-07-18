@@ -7,7 +7,7 @@
 </head>
 <body>
 	<?php 
-		$num1 = 8;
+		$num1 = 7;
 		$num2 = 4;
 		echo '<h5>Operadores aritméticos</h5>';
 		//Operações básicas
