@@ -9,6 +9,7 @@
 	<?php 
 		$num1 = 8;
 		$num2 = 4;
+		echo '<h5>Operadores aritméticos</h5>';
 		//Operações básicas
 		echo "A soma entre num1 e num2 é " . $num1 + $num2;
 		echo '<br>';
@@ -20,6 +21,11 @@
 		//Módulo
 		echo '<br>';
 		echo "O módulo de num1 e num2 é " . $num1 % $num2;
+		//Operadores de atribuição e operadores aritméticos
+		echo '<h5>Operadores de atribuição e operadores aritméticos</h5>';
+		$x = 10;
+		$x = $x += 5;
+		echo 'Valor inicial da variável x é 10, incrementanto mais 5 fica ' . $x;
 	?>
 </body>
 </html>
