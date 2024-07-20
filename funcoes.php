@@ -67,13 +67,40 @@
 		echo '<br>';
 		echo str_replace('PHP', 'JavaScript', $texto);
 		echo '<hr>';
-		//sub tring - retorna parte de uma string, e assim como a str_replace, a sbstr também utiliza parâmetros para o seun funcionamento
+		//sub tring - retorna parte de uma string, e assim como a str_replace, a sbstr também utiliza parâmetros para o seu funcionamento
 		echo '<p><b>substr</b> - retorna parte de uma string, e assim como a str_replace, a sbstr também utiliza parâmetros para o seun funcionamento</p>';
 		echo $texto;
 		echo '<br>';
 		//Curso completo de PHP
 		//0,1,2,3,4,5 ... 20-1
 		echo substr($texto, 0, 14) . '...';
+		echo '<hr>';
+	?>
+	<?php
+		//Funções nativas para tarefas matemáticas
+		$numero = 7.6;
+		echo '<h3>Funções nativas para tarefas matemáticas</h3>';
+		//ceil($numero): arredonda o valor para cima
+		echo '<p><b>ceil($numero)</b>: arredonda o valor para cima</p>';
+		echo $numero . ': '. ceil($numero);
+		echo '<hr>';
+		//floor($numero): arredonda o valor para baixo
+		echo '<p><b>floor($numero)</b>: arredonda o valor para baixo</p>';
+		echo $numero . ': '. floor($numero);
+		echo '<hr>';
+		//round($numero): arredonda o valor com base nas casas decimais
+		echo '<p><b>round($numero)</b>: arredonda o valor com base nas casas decimais</p>';
+		echo $numero . ': '. round($numero);
+		echo '<hr>';
+		//rand(): gera um inteiro aletório, essa função gera o maior núnero aletório possível  de acordo com o sistema operacional
+		echo '<p><b>rand()</b>: gera um inteiro aletório, essa função gera o maior núnero aletório possível de acordo com o sistema operacional</p>';
+		echo rand(0, 100);
+		echo '<br>';
+		echo getrandmax();
+		echo '<hr>';
+		//sqrt($numero): retorna a raiz quadrada
+		echo '<p><b>sqrt($numero)</b>: retorna a raiz quadrada</p>';
+		echo $numero . ': '. sqrt($numero);
 		echo '<hr>';
 	?>
 </body>
