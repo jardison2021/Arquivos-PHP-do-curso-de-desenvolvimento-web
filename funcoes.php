@@ -103,5 +103,46 @@
 		echo $numero . ': '. sqrt($numero);
 		echo '<hr>';
 	?>
+	<?php
+		//Funções nativas para manipular datas
+		echo '<h3>Funções nativas para manipular datas</h3>';
+		//date(formato): recupera data atual
+		echo '<p><b>date(formato)</b>: recupera data atual</p>';
+		echo date('d/m/Y H:i');
+		echo '<hr>';
+		//date_dafault_timezone_get(timezone): recupera o timezone default da aplicação
+		echo '<p><b>date_dafault_timezone_get(timezone)</b>: recupera o timezone default da aplicação</p>';
+		echo date_default_timezone_get();
+		echo '<hr>';
+		//date_default_timezone_set(timezone): atualiza o timezone default da aplicação
+		echo '<p><b>date_default_timezone_set(timezone)</b>: atualiza o timezone default da aplicação</p>';
+		date_default_timezone_set('America/Fortaleza');
+		echo date('d/m/Y H:i');
+		echo '<br>';
+		echo date_default_timezone_get();
+		echo '<hr>';
+		//strtotime(data): transforma datas textuais em segundos
+		echo '<h3>Cálculo de datas</h3>';
+		echo '<p><b>strtotime(data)</b>: transforma datas textuais em segundos</p>';
+		$data_inicial = '2024/07/20';
+		$data_final = '2024/12/31';
+		//timestamp
+		//01/01/1970 -- 2024/07/20
+		$time_inicial = strtotime($data_inicial);
+		$time_final = strtotime($data_final);
+		echo 'Data inicial: ' . $data_inicial . ' - ' . $time_inicial;
+		echo '<br>';
+		echo 'Data final: ' . $data_final . ' - ' . $time_final;
+		$diferenca_time = $time_final - $time_inicial;
+		echo '<br>';
+		echo 'Diferença entre a data final e inicial em segundos: ' . $diferenca_time;
+		//Quantos segundos existem em um dia
+		$segundos_dia = 24 * 60 * 60;
+		echo '<br>';
+		echo 'Em um dia existem ' . $segundos_dia . ' segundos';
+		$diferenca_dias = $diferenca_time / $segundos_dia;
+		echo '<br>';
+		echo 'A diferença em dias entre a data inicial e data final é de ' . $diferenca_dias . ' dias';
+	?>
 </body>
 </html>
