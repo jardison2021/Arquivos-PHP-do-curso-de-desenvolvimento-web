@@ -107,6 +107,7 @@
 		}else{
 			echo 'Objeto não encontrado';
 		}
+		echo '<hr>';
 	?>
 </body>
 </html>
