@@ -109,5 +109,78 @@
 		}
 		echo '<hr>';
 	?>
+	<?php
+		//Funções nativas para manipular arrays
+		echo '<h1>Funções nativas para manipular arrays</h1>';
+		$array = array();
+		//is_array(array): verifica se o parâmetro é um array
+		echo '<h3>is_array(array): verifica se o parâmetro é um array</h3>';
+		$retorno = is_array($array);
+		if($retorno){
+			echo 'Sim, é um array';
+		}else{
+			echo 'Não é um array';
+		}
+		//array_keys(array): retornar todas as chaves de um array
+		echo '<h3>array_keys(array): retornar todas as chaves de um array</h3>';
+		$array2 = [1 => 'a', 7 => 'b', 18 => 'c'];
+		echo '<pre>';
+			print_r($array2);
+		echo '</pre>';
+		$cahves_array = array_keys($array2);
+		echo '<pre>';
+			print_r($cahves_array);
+		echo '</pre>';
+		//sort(array): ordena um array e rajusta seus índices
+		echo '<h3>sort(array): ordena um array e rajusta seus índices</h3>';
+		$array3 = array( 'teclado','mouse', 'cabo hdmi', 'gabinete', 'fonte atx', 'notebook');
+		echo '<pre>';
+			print_r($array3);
+		echo '</pre>';
+		sort($array3);
+		echo '<pre>';
+			print_r($array3);
+		echo '</pre>';
+		//asort(array): ordena um array preservando os índices
+		echo '<h3>asort(array): ordena um array preservando os índices</h3>';
+		$array4 = array('teclado','mouse', 'cabo hdmi', 'gabinete', 'fonte atx', 'notebook');
+		echo '<pre>';
+			print_r($array4);
+		echo '</pre>';
+		asort($array4);
+		echo '<pre>';
+			print_r($array4);
+		echo '</pre>';
+		//count(array): conta a quantidade de elementos de um array
+		$array5 = array('teclado','mouse', 'cabo hdmi', 'gabinete', 'fonte atx', 'notebook');
+		echo '<h3>count(array): conta a quantidade de elementos de um array</h3>';
+		echo '<pre>';
+			print_r($array5);
+			echo 'Quantidade de elemento no array: ' . count($array5);
+		echo '</pre>';
+		//array_merge(array): funde um array ou mais
+		echo '<h3>array_merge(array): funde um array ou mais</h3>';
+		$array6 = ['osx', 'windows'];
+		$array7 = ['linux'];
+		$array8 = ['solaris'];
+		$array9 = array_merge($array6, $array7, $array8);
+		echo '<pre>';
+			print_r($array9);
+		echo '</pre>';
+		//explode(array): divide uma string baseada em um delimitador
+		echo '<h3>explode(array): divide uma string baseada em um delimitador</h3>';
+		$string = '02/08/2024';
+		$array10 = explode('/', $string);
+		echo $string;
+		echo '<pre>';
+			print_r($array10);
+			echo $array10[1].'-'.$array10[0].'-'.$array10[2];
+		echo '</pre>';
+		//implode(array): juntas elementos de um array em uma string
+		echo '<h3>implode(array): juntas elementos de um array em uma string</h3>';
+		$array11 = ['a', 'b', 'c', 'd'];
+		$retorno = implode(',', $array11);
+		echo $retorno;
+	?>
 </body>
 </html>
