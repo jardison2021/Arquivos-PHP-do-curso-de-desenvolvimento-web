@@ -20,6 +20,7 @@
 	<?php
 		echo '<h1>Estruturas de repetição(loops)</h1>';
 		echo '<h3>Whille</h3>';
+		echo '<p>Executa o loop enquanto a condição for verdadeira.</p>';
 		$num = 1;
 		echo "Início do loop <br>";
 		while ($num < 10) {
@@ -37,6 +38,7 @@
 	?>
 	<?php
 		echo '<h3>Do Whille</h3>';
+		echo '<p>Executa o loop primeiro e depois verifica a condição.</p>';
 		$x = 1;
 		do{
 			echo "X = $x </br>";
@@ -44,6 +46,21 @@
 			//continue
 			//break
 		}while($x < 9);
+		echo '<hr>';
+	?>
+	<?php
+		echo '<h3>For</h3>';
+		echo '<p>Executa o loop enquanto a condição for verdadeira, porém você pode instanciar as variaveis contadoras dentro da estrutura do loop.</p>';
+		for($x = 10; $x > 0; $x--){
+			echo "X = $x <br>";
+			//break
+			//continue
+		}
+		echo '<hr>';
+	?>
+	<?php
+		echo '<h3>Foreach</h3>';
+		echo '<p>Executa o loop sobre os elementos de um array.</p>';
 	?>
 </body>
 </html>
