@@ -79,6 +79,24 @@
 		echo '<hr>';
 	?>
 	<?php
+		echo '<h3>Praticando um pouco mais com foreach</h3>';
+			$funcionarios = array(
+				array('nome' => 'João', 'salario' => 2500, 'data_nascimento' => '06/03/1970'),
+				array('nome' => 'Maria', 'salario' => 3000, 'data_nascimento' => '06/03/1971'),
+				array('nome' => 'Júlia', 'salario' => 2200, 'data_nascimento' => '06/03/1972')
+			);
+			echo '<pre>';
+			print_r($funcionarios);
+			echo '</pre>';
+			foreach($funcionarios as $idx => $funcionarios){
+				foreach($funcionarios as $idx2 => $valor){
+					echo "$idx2 - $valor <br>";
+				}
+				echo '<hr>';
+			}
+		echo '<hr>';
+	?>
+	<?php
 		echo '<h1>Praticando um pouco mais, percorrendo arrays com Whille, Do Whille e For</h1>';
 		echo '<h3>Whille</h3>';
 		$registros = array(array('titulo' => 'Título notícia 1', 'conteudo' => 'Conteúdo notícia 1'), array('titulo' => 'Título notícia 2', 'conteudo' => 'Conteúdo notícia 2'), array('titulo' => 'Título notícia 3', 'conteudo' => 'Conteúdo notícia 3'), array('titulo' => 'Título notícia 4', 'conteudo' => 'Conteúdo notícia 4'));
