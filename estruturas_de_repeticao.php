@@ -66,6 +66,16 @@
 	<?php
 		echo '<h3>Foreach</h3>';
 		echo '<p>Executa o loop sobre os elementos de um array.</p>';
+		$itens = array('sofá', 'mesa', 'cadeira', 'fogão', 'geladeira');
+		echo '<pre>';
+		print_r($itens);
+		echo '<pre>';
+		foreach ($itens as $item) {
+			echo "$item <br>";
+			if($item == 'mesa'){
+				echo '(Compre uma mesa e ganhe 25% de desconto na compra de 4 cadeiras)' . '<br>';
+			}
+		}
 		echo '<hr>';
 	?>
 	<?php
