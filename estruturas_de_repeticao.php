@@ -33,6 +33,17 @@
 			}*/
 		}
 		echo 'Fim do loop';
+		echo '<hr>';
+	?>
+	<?php
+		echo '<h3>Do Whille</h3>';
+		$x = 1;
+		do{
+			echo "X = $x </br>";
+			$x++;
+			//continue
+			//break
+		}while($x < 9);
 	?>
 </body>
 </html>
