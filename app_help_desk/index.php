@@ -40,7 +40,7 @@
                   <input name="senha" type="password" class="form-control" placeholder="Senha">
                 </div>
                 <?/*verifica se o índice do array está realmente setado*/ if(isset($_GET['login']) && $_GET['login'] == 'erro'){ ?>
-                <div class="text-danger">Usuário ou senha inválido</div>
+                    s<div class="text-danger">Usuário ou senha inválido</div>
                 <? } ?>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
               </form>
