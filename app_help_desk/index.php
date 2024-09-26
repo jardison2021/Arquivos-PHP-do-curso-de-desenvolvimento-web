@@ -40,7 +40,9 @@
                   <input name="senha" type="password" class="form-control" placeholder="Senha">
                 </div>
                 <?/*verifica se o índice do array está realmente setado*/ if(isset($_GET['login']) && $_GET['login'] == 'erro'){ ?>
-                    s<div class="text-danger">Usuário ou senha inválido</div>
+                    <div class="text-danger">Usuário ou senha inválido
+                      Faça login antes de acessar as páginas protegidas!
+                    </div>
                 <? } ?>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
               </form>
