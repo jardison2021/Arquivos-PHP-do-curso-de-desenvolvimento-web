@@ -1,2 +1,0 @@
-Computador sem internet#Rede#Computador não conecta na rede
-Computador não liga#Hardware#Computador apresenta problemas para ligar.
