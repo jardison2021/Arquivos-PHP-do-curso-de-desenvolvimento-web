@@ -1,7 +1,5 @@
 <?php
-	echo '<pre>';
-	print_r($_POST);
-	echo '</pre>';
+	session_start();
 	//str_replace: substitui um caractere
 	$titulo = str_replace('#', '-', $_POST['titulo']);
 	$categoria = str_replace('#', '-', $_POST['categoria']);
@@ -9,7 +7,7 @@
 	//função que abre o arquivo
 	$arquivo = fopen('arquivo.hd','a');
 	//implode: trasnforma o array em string
-	$texto = $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL;
+	$texto = $_SESSION['id'] . '#' . $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL;
 	//fwrite escreve no arquivo
 	fwrite($arquivo, $texto);
 	//fclose fecha o arquivo
