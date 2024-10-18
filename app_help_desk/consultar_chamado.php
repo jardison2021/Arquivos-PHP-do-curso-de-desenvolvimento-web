@@ -3,7 +3,7 @@
   //chamados
   $chamados = array();
   //abrir arquivo arquivo.hd
-  $arquivo = fopen('arquivo.hd', 'r');
+  $arquivo = fopen('../../app_help_desk/arquivo.hd', 'r');
   //abrir o arquivo enquanto houver registros (linhas)
   while (!feof($arquivo)) {
     $registro = fgets($arquivo);

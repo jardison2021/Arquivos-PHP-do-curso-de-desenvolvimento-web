@@ -5,7 +5,7 @@
 	$categoria = str_replace('#', '-', $_POST['categoria']);
 	$descricao = str_replace('#', '-', $_POST['descricao']);
 	//função que abre o arquivo
-	$arquivo = fopen('arquivo.hd','a');
+	$arquivo = fopen('../../app_help_desk/arquivo.hd','a');
 	//implode: trasnforma o array em string
 	$texto = $_SESSION['id'] . '#' . $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL;
 	//fwrite escreve no arquivo
