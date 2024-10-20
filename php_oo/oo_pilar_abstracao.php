@@ -3,15 +3,42 @@
     //modelo
     class Funcionario {
         //atributos
-        public $nome = 'José';
-        public $telefone = '11 99999-8888';
-        public $numFilhos = 2;
+        public $nome = null;
+        public $telefone = null;
+        public $numFilhos = null;
+        public $cargo = null;
+        public $salario = null;
+
+
+        //getters setters(overloading / sobrecarga)
+        function __set($atributo, $valor){
+            $this->$atributo = $valor;
+        }
+
+        function __get($atributo) {
+            return $this->$atributo;
+        }
+
+        /* function setNome($nome) {
+            $this->nome = $nome;
+        }
+
+        function setNumFilhos($numFilhos) {
+            $this->numFilhos = $numFilhos;
+        }
+
+        function getNome() {
+            return $this->nome;
+        }
+
+        function getNumFilhos() {
+            return $this->numFilhos;
+        } */
 
         //métodos
         function resumirCadFunc(){
             /* this, operador de ajuste de contexto */
-            return "$this->nome possui $this->numFilhos filhos(s)";
-  
+            return "Nome: " . $this->__get('nome') . "<br>" . "Telefone: " . $this->__get('telefone') . "<br>" . "Filhos: " . $this->__get('numFilhos') . "<br>" . "Cargo: " . $this->__get('cargo') . "<br>" . "Sálario: " . $this->__get('salario');
         }
 
         function modificarNumFilhos($numFilhos){
@@ -23,15 +50,20 @@
     }
 
     $y = new Funcionario();
-    echo $y->resumirCadFunc(); //para acessar atributos ou métodos, usamos o "->"
-    echo '<br />';
-    $y->modificarNumFilhos(3);
+    $y->__set('nome', 'José');
+    $y->__set('telefone', '(85) 99999-9999');
+    $y->__set('numFilhos', 2);
+    $y->__set('cargo', 'Analista de suporte');
+    $y->__set('salario', 2500);
     echo $y->resumirCadFunc();
-    echo '<hr />';
-
-    $x = new Funcionario();
-    echo $x->resumirCadFunc();
+    // echo $y->__get('nome') . ' possui ' . $y->__get('numFilhos') . ' filho(s) ';
     echo '<br />';
-    $x->modificarNumFilhos(1);
+    echo '<hr>';
+    $x = new Funcionario();
+    $x->__set('nome', 'Maria');
+    $x->__set('telefone', '(85) 99999-9999');
+    $x->__set('numFilhos', 0);
+    $x->__set('cargo', 'Analista sênior');
+    $x->__set('salario', 7000);
     echo $x->resumirCadFunc();
-?>
+    // echo $x->__get('nome') . ' possui ' . $x->__get('numFilhos') . ' filho(s) ';
