@@ -36,7 +36,8 @@
  		}*/
 		//métodos
 		function resumirCadFunc(){
-			return "Nome: $this->nome <br> Telefone: $this->telefone <br> Filhos: $this->numFilhos <br> Cargo: $this->cargo <br> Salario: $this->salario";
+			return "Nome: " . $this->__get('nome') . "<br>" . "Telefone: " . $this->__get('telefone') . "<br>" . "Filhos: " . $this->__get('numFilhos') . "<br>" . "Cargo: " . $this->__get('cargo') . "<br>" . "Salário: " . $this->__get('salario');
+			//return "Nome: $this->nome <br> Telefone: $this->telefone <br> Filhos: $this->numFilhos <br> Cargo: $this->cargo <br> Salario: $this->salario";
 			//this: operador de ajuste de contexto, serve para recuperar atributos do objeto
 		}
 		function modificarNumFilhos($numFilhos){
@@ -58,7 +59,7 @@
 	echo '<br>';
 	echo 'Get';
 	echo '<br>';
-	echo 'Nome: ' . $y->__get('nome') . '<br>' . 'Telefone: ' . $y->__get('telefone') . '<br>' . 'Filhos: ' . $y->__get('numFilhos') . '<br>' . 'Cargo: ' . $y->__get('cargo') . '<br>' . 'Salário: ' . $y->__get('salario');
+	//echo 'Nome: ' . $y->__get('nome') . '<br>' . 'Telefone: ' . $y->__get('telefone') . '<br>' . 'Filhos: ' . $y->__get('numFilhos') . '<br>' . 'Cargo: ' . $y->__get('cargo') . '<br>' . 'Salário: ' . $y->__get('salario');
 	echo '<hr>';
 	$x = new Funcionario();
 	$x->__set('nome', 'Maria');
@@ -66,5 +67,6 @@
 	$x->__set('numFilhos', 2);
 	$x->__set('cargo', 'Analista Senior');
 	$x->__set('salario', 7500);
-	echo 'Nome: ' .  $x->__get('nome') . '<br>' . 'Telefone: ' . $x->__get('telefone') . '<br>' . 'Filhos: ' . $x->__get('numFilhos') . '<br>' . 'Cargo: ' . $x->__get('cargo') . '<br>' . 'Salário: ' . $x->__get('salario');
+	echo $x->resumirCadFunc();
+	//echo 'Nome: ' .  $x->__get('nome') . '<br>' . 'Telefone: ' . $x->__get('telefone') . '<br>' . 'Filhos: ' . $x->__get('numFilhos') . '<br>' . 'Cargo: ' . $x->__get('cargo') . '<br>' . 'Salário: ' . $x->__get('salario');
 ?>
