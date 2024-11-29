@@ -46,14 +46,14 @@
 	    $mail->isSMTP();                                            //Send using SMTP
 	    $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
 	    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-	    $mail->Username   = 'email@dominio.com';        //SMTP username
-	    $mail->Password   = '*********';                             //SMTP password
+	    $mail->Username   = 'reboucasfrancisco84@gmail.com';        //SMTP username
+	    $mail->Password   = '';                             //SMTP password
 	    $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
 	    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
 	    //Recipients
-	    $mail->setFrom('email@dominio.com', 'nome pessoal ou empresa');
-	    $mail->addAddress('email@dominio.com', 'nome pessoal ou empresa');     //Add a recipient
+	    $mail->setFrom('reboucasfrancisco84@gmail.com', 'Francisco Rebouças');
+	    $mail->addAddress($mensagem->__get('para'));     //Add a recipient
 	    //$mail->addAddress('ellen@example.com');               //Name is optional
 	    //$mail->addReplyTo('info@example.com', 'Information');
 	    //$mail->addCC('cc@example.com');
@@ -65,12 +65,12 @@
 
 	    //Content
 	    $mail->isHTML(true);                                  //Set email format to HTML
-	    $mail->Subject = 'Assunto do email';
-	    $mail->Body    = 'Esta é uma mensagem de <b>teste!</b>';
-	    $mail->AltBody = 'Esta uma mensagem de teste!';
+	    $mail->Subject = $mensagem->__get('assunto');
+	    $mail->Body    = $mensagem->__get('mensagem');
+	    $mail->AltBody = 'É necessário utilizar um client que suporte HTML para ter acesso ao conteúdo dessa mensagem.';
 
 	    $mail->send();
-	    echo 'Mensagem enviada com sucesso!';
+	    echo 'E-mail enviado com sucesso!';
 	} catch (Exception $e) {
 	    echo "Não foi possível enviar a mensagem, por favor, tente novamente mais tarde. Detalhes do erro: {$mail->ErrorInfo}";
 	}
