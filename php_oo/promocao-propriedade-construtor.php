@@ -13,12 +13,12 @@
 			public float $valor = 0
 		){}
 	}
-	$produto = new Produto('Smartphone', 1500);
+	$produto = new Produto(nome: 'Smartphone', valor: 1500);
 	echo "Produto: ".$produto->nome;
 	echo "<br>";
 	echo "Valor: ".$produto->valor;
 	echo "<hr>";
-	$produto2 = new Produto('Geladeira', 3000);
+	$produto2 = new Produto(valor: 3500, nome: 'Geladeira');
 	echo "Produto: ".$produto2->nome;
 	echo "<br>";
 	echo "Valor: ".$produto2->valor;
