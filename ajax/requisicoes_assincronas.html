@@ -10,9 +10,19 @@
 		<script type="text/javascript">
 			function requisitarPagina(url){
 				let ajax = new XMLHttpRequest();
+				//Estados da requisiçõe
+				// state 0 - requisição não iniciada
+				console.log(ajax.readyState);
 				ajax.open('GET', url);
+				// state 1 - conexão estabelecida com o servidor
+				console.log(ajax.readyState);
+				// state 2 - requisição recebida
+				// state 3 - processando requisição
+				// state 4 - requisição finalizada
+				ajax.onreadystatechange = () => {
+					console.log(ajax.readyState);
+				}
 				ajax.send();
-				console.log(ajax);
 			}
 		</script>
 	</head>
