@@ -34,11 +34,11 @@
 				// state 4 - requisição finalizada
 				ajax.onreadystatechange = () => {
 					if(ajax.readyState == 4 && ajax.status == 200){
-						document.getElementById('conteudo').innerHTML = 'Requisição finalizada com sucesso, o status é 200'
+						document.getElementById('conteudo').innerHTML = ajax.responseText
 						//document.getElementById('loading').remove()
 					}
 					if(ajax.readyState == 4 && ajax.status == 404){
-						ocument.getElementById('conteudo').innerHTML = 'Requisição finalizada, porém o recurso solictado não foi encontrado, o status é 404'
+						ocument.getElementById('conteudo').innerHTML = 'Tente novamente mais tarde!'
 						//document.getElementById('loading').remove()
 					}
 				}
