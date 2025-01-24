@@ -5,7 +5,20 @@
 	//Tratamento de erros
 	try{
 		$conexao = new PDO($dsn, $usuario, $senha);
-	}catch(PDOException $e){
+		//executando instruções sql u tilizando o Exec
+		//Criando tabela
+		$query = 'create table if not exists tb_usuarios(id int not null primary key auto_increment, nome varchar(50) not null, email varchar(100) not null, senha varchar(32) not null)';
+		$retorno = $conexao->exec($query);
+		echo $retorno;
+		//Fazendo insert
+		/*$query = 'insert into tb_usuarios(nome, email, senha) values ("Jardison", "jardison@teste.com", "1234578")';
+		$retorno = $conexao->exec($query);
+		echo $retorno;*/
+		//Deletendo dado
+		$query = 'delete from tb_usuarios';
+		$retorno = $conexao->exec($query);
+		echo $retorno;
+	} catch(PDOException $e) {
 		echo 'Erro: '.$e->getcode().' Mensagem: '.$e->getMessage();
 		//registrar erro
 	}
