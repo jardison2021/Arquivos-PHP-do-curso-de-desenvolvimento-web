@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 	$dsn = 'mysql:host=localhost;dbname=php_com_pdo';
 	$usuario = 'root';
@@ -66,4 +67,44 @@
 		echo 'Erro: '.$e->getcode().' Mensagem: '.$e->getMessage();
 		//registrar erro
 	}
+=======
+<?php
+	$dsn = 'mysql:host=localhost;dbname=php_com_pdo';
+	$usuario = 'root';
+	$senha = '';
+	//Tratamento de erros
+	try{
+		$conexao = new PDO($dsn, $usuario, $senha);
+		//executando instruções sql tilizando o Exec
+		//Criando tabela
+		/*$query = '
+			create table tb_usuarios(
+				id int not null primary key auto_increment,
+				nome varchar(50) not null,
+				email varchar(100) not null,
+				senha varchar(32) not null
+			)
+		';
+		$retorno = $conexao->exec($query);
+		echo $retorno;*/
+		//Inserindo dados
+		/*$query = '
+			insert into tb_usuarios(
+				nome, email, senha
+			) values (
+				"Jardison Santos", "jardison@email.com", "123456"
+			)
+		';
+		$retorno = $conexao->exec($query);
+		echo $retorno;*/
+		$query = '
+			delete from tb_usuarios
+		';
+		$retorno = $conexao->exec($query);
+		echo $retorno;
+	} catch(PDOException $e) {
+		echo 'Erro: '.$e->getcode().' Mensagem: '.$e->getMessage();
+		//registrar erro
+	}
+>>>>>>> 29a928a (De volta aos comandos)
 ?>
