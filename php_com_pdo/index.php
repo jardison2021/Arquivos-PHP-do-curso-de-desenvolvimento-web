@@ -86,9 +86,9 @@
 			)
 		';
 		$retorno = $conexao->exec($query);
-		echo $retorno;*/
+		echo $retorno;
 		//Inserindo dados
-		/*$query = '
+		/$query = '
 			insert into tb_usuarios(
 				nome, email, senha
 			) values (
@@ -96,12 +96,42 @@
 			)
 		';
 		$retorno = $conexao->exec($query);
-		echo $retorno;*/
-		$query = '
-			delete from tb_usuarios
-		';
-		$retorno = $conexao->exec($query);
 		echo $retorno;
+		$query = '
+			insert into tb_usuarios(
+				nome, email, senha
+			)values(
+				"Jardison", "jardison@email.com", "123456"
+			)
+		';
+		$conexao->exec($query);
+		$query = '
+			insert into tb_usuarios(
+				nome, email, senha
+			)values(
+				"Francisco", "francisco@email.com", "789101"
+			)
+		';
+		$conexao->exec($query);
+		$query = '
+			insert into tb_usuarios(
+				nome, email, senha
+			)values(
+				"Santos", "santos@email.com", "112131"
+			)
+		';
+		$conexao->exec($query);*/
+
+		//Criando Query de consulta
+		$query = '
+			select * from tb_usuarios
+		';
+		$stmt = $conexao->query($query);
+		$lista = $stmt->fetchAll();
+		echo '<pre>';
+		print_r($lista);
+		echo '</pre>';
+		echo $lista[0]['nome'];
 	} catch(PDOException $e) {
 		echo 'Erro: '.$e->getcode().' Mensagem: '.$e->getMessage();
 		//registrar erro
