@@ -5,19 +5,63 @@
 	//Tratamento de erros
 	try{
 		$conexao = new PDO($dsn, $usuario, $senha);
-		//executando instruções sql u tilizando o Exec
+		//executando instruções sql tilizando o Exec
 		//Criando tabela
-		$query = 'create table if not exists tb_usuarios(id int not null primary key auto_increment, nome varchar(50) not null, email varchar(100) not null, senha varchar(32) not null)';
+		/*$query = '
+			create table tb_usuarios(
+				id int not null primary key auto_increment,
+				nome varchar(50) not null,
+				email varchar(100) not null,
+				senha varchar(32) not null
+			)
+		';
 		$retorno = $conexao->exec($query);
 		echo $retorno;
-		//Fazendo insert
-		/*$query = 'insert into tb_usuarios(nome, email, senha) values ("Jardison", "jardison@teste.com", "1234578")';
-		$retorno = $conexao->exec($query);
-		echo $retorno;*/
-		//Deletendo dado
-		$query = 'delete from tb_usuarios';
+		//Inserindo dados
+		/$query = '
+			insert into tb_usuarios(
+				nome, email, senha
+			) values (
+				"Jardison Santos", "jardison@email.com", "123456"
+			)
+		';
 		$retorno = $conexao->exec($query);
 		echo $retorno;
+		$query = '
+			insert into tb_usuarios(
+				nome, email, senha
+			)values(
+				"Jardison", "jardison@email.com", "123456"
+			)
+		';
+		$conexao->exec($query);
+		$query = '
+			insert into tb_usuarios(
+				nome, email, senha
+			)values(
+				"Francisco", "francisco@email.com", "789101"
+			)
+		';
+		$conexao->exec($query);
+		$query = '
+			insert into tb_usuarios(
+				nome, email, senha
+			)values(
+				"Santos", "santos@email.com", "112131"
+			)
+		';
+		$conexao->exec($query);*/
+
+		//Criando Query de consulta
+		$query = '
+			select * from tb_usuarios
+		';
+		$stmt = $conexao->query($query);
+		$lista = $stmt->fetchAll();
+		echo '<pre>';
+		print_r($lista);
+		echo '</pre>';
+		echo $lista[0]['nome'];
 	} catch(PDOException $e) {
 		echo 'Erro: '.$e->getcode().' Mensagem: '.$e->getMessage();
 		//registrar erro
