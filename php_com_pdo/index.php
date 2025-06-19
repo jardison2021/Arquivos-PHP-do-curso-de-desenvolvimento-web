@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 	$dsn = 'mysql:host=localhost;dbname=php_com_pdo';
 	$usuario = 'root';
@@ -136,5 +135,4 @@
 		echo 'Erro: '.$e->getcode().' Mensagem: '.$e->getMessage();
 		//registrar erro
 	}
->>>>>>> 29a928a (De volta aos comandos)
 ?>
