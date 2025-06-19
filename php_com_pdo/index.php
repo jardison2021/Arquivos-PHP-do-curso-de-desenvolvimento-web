@@ -54,14 +54,14 @@
 
 		//Criando Query de consulta
 		$query = '
-			select * from tb_usuarios
+			select * from tb_usuarios where id = 7
 		';
 		$stmt = $conexao->query($query);
-		$lista = $stmt->fetchAll(PDO::FETCH_OBJ);
+		$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 		echo '<pre>';
-		print_r($lista);
+		print_r($usuario);
 		echo '</pre>';
-		echo $lista[1]->nome;
+		echo $usuario['nome'];
 	} catch(PDOException $e) {
 		echo 'Erro: '.$e->getcode().' Mensagem: '.$e->getMessage();
 		//registrar erro
