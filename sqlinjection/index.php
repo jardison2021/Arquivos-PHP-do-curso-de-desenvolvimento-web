@@ -1,24 +1,23 @@
 <?php
 	if(!empty($_POST['usuario']) && !empty($_POST['senha'])){
-		$dsn = 'mysql:localhost;dbname=php_com_pdo';
+		$dsn = 'mysql:host=localhost;dbname=php_com_pdo';
 		$usuario = 'root';
 		$senha= '';
 		try {
 			$conexao = new PDO($dsn, $usuario, $senha);
 			//query
-			$query = "select * from tb_usuarios where";
-			$query .= " email = '{$_POST['usuario']}'";
-			$query .= " AND senha = '{$_POST['senha']}'";
-			echo $query;
-			$conexao->query($query);
-			$stmt = $conexao->query($query);
+			$query = "select * from tb_usuarios where email = :usuario AND senha = :senha";
+			$stmt = $conexao->prepare($query);
+			$stmt->bindValue(':usuario', $_POST['usuario']);
+			$stmt->bindValue(':senha', $_POST['senha']);
+			//recuperado objeto statement
+			$stmt->execute();
 			$usuario = $stmt->fetch();
-			echo '<hr>';
 			echo '<pre>';
 			print_r($usuario);
 			echo '</pre>';
 		} catch (Exception $e) {
-			echo 'Erro: '.$e->getcode().' Mensagem: '.$e->getMessage();
+			echo 'Erro: '.$e->getCode().' Mensagem: '.$e->getMessage();
 		}
 	}
 ?>
@@ -31,7 +30,7 @@
 </head>
 <body>
 	<form method="post" action="index.php">
-		<input type="text" name="nome" placeholder="Usuário">
+		<input type="text" name="usuario" placeholder="Usuário">
 		<br>
 		<input type="password" name="senha" placeholder="Senha">
 		<br>
